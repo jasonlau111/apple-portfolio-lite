@@ -1,0 +1,35 @@
+# ============================================
+# docker-compose.yml for Jason's Blog
+# Deploy to Unraid NAS
+# ============================================
+#
+# 使用方法:
+# 1. 将整个项目上传到 NAS (例如 /mnt/cache/docker/jason-blog/)
+# 2. SSH 到 NAS，cd 到该目录
+# 3. 运行: docker-compose up -d --build
+#
+# 更新文章:
+# - 直接把 .md 文件放到 /mnt/cache/docker/jason-blog/content/ 目录
+# - 刷新浏览器即可看到新文章 (无需重启容器)
+#
+# ============================================
+
+services:
+  blog:
+    build:
+      context: .
+      args:
+        # 构建时代理 (用于拉取 npm 包)
+        HTTP_PROXY: http://192.168.50.3:7890
+        HTTPS_PROXY: http://192.168.50.3:7890
+    container_name: jason-blog
+    restart: always
+    ports:
+      - "3080:3000" # 访问地址: http://NAS_IP:3080
+    volumes:
+      # 挂载 content 目录，方便热更新文章 (可写)
+      - ./content:/app/content
+      # 挂载 public 目录，方便更新头像等静态资源
+      - ./public:/app/public:ro
+    environment:
+      - NODE_ENV=production

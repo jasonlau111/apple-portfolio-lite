@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#FFFFFF] text-[#1D1D1F] transition-colors duration-500;
+  }
+}
+
+/* Dark Mode Ambient Background */
+/* Only apply this special background when .dark class is present on html */
+:root.dark body,
+.dark body {
+  background-color: #000000;
+  background-image: radial-gradient(circle at 50% 0%, #1c1c1e 0%, #000000 70%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Ensure Light Mode is Clean White */
+:root:not(.dark) body {
+  background-color: #FFFFFF;
+  background-image: none;
+}
