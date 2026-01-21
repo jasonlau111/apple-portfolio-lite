@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+[English](#english) | [简体中文](#简体中文)
 
-## Getting Started
+---
 
-First, run the development server:
+# Apple Portfolio Lite (个人博客)
+
+一个极简风格的个人博客，Apple 设计语言，基于 Next.js 16 构建。
+
+![Preview](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js) ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react) ![Tailwind](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=flat-square&logo=tailwind-css)
+
+## 特性
+
+- 🎨 **Apple 设计风格** - 暗色主题、毛玻璃效果、圆角卡片
+- ⚡ **极速性能** - Next.js App Router + React 19
+- 🌓 **深色模式** - 自动跟随系统，支持手动切换
+- ⌚ **活动圆环时钟** - Apple Watch 风格的动态时钟组件
+- 📝 **Markdown 博客** - 使用 gray-matter 解析 frontmatter
+- 🐳 **Docker 支持** - 一键自托管部署
+
+## 快速开始
+
+### 本地开发
 
 ```bash
+# 克隆项目
+git clone https://github.com/jasonlau111/apple-portfolio-lite.git
+cd apple-portfolio-lite
+
+# 安装依赖
+npm install
+
+# 启动开发服务器
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 [http://localhost:3000](http://localhost:3000) 查看效果。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Docker 部署
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+docker-compose up -d
+```
 
-## Learn More
+### Vercel 部署（推荐）
 
-To learn more about Next.js, take a look at the following resources:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/jasonlau111/apple-portfolio-lite)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 项目结构
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+├── app/                  # Next.js App Router
+│   ├── components/       # React 组件
+│   │   ├── ActivityClock.tsx   # 活动圆环时钟
+│   │   ├── ProfileCard.tsx     # 个人资料卡片
+│   │   └── ...
+│   └── blog/             # 博客页面
+├── content/              # Markdown 文章
+├── public/               # 静态资源
+└── docker-compose.yml    # Docker 配置
+```
 
-## Deploy on Vercel
+## 自定义
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 修改个人信息
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+编辑 `app/components/ProfileCard.tsx` 中的姓名和简介。
+
+### 添加文章
+
+在 `content/` 目录下创建 `.md` 文件：
+
+```markdown
+---
+title: "文章标题"
+date: "2026-01-21"
+description: "文章描述"
+tags: ["标签1", "标签2"]
+---
+
+正文内容...
+```
+
+## 技术栈
+
+- [Next.js 16](https://nextjs.org/) - React 框架
+- [React 19](https://react.dev/) - UI 库
+- [Tailwind CSS](https://tailwindcss.com/) - 样式
+- [Framer Motion](https://www.framer.com/motion/) - 动画
+- [next-themes](https://github.com/pacocoursey/next-themes) - 主题切换
+
+## 许可证
+
+MIT
+
+---
+
+<a name="english"></a>
+
+# English
+
+A minimalist personal blog with Apple design language, built with Next.js 16.
+
+## Features
+
+- 🎨 **Apple Design** - Dark theme, glassmorphism, rounded cards
+- ⚡ **Blazing Fast** - Next.js App Router + React 19
+- 🌓 **Dark Mode** - System-aware with manual toggle
+- ⌚ **Activity Clock** - Apple Watch style animated clock
+- 📝 **Markdown Blog** - Frontmatter parsing with gray-matter
+- 🐳 **Docker Ready** - One-command self-hosting
+
+## Quick Start
+
+```bash
+git clone https://github.com/jasonlau111/apple-portfolio-lite.git
+cd apple-portfolio-lite
+npm install
+npm run dev
+```
+
+## Deploy
+
+### Vercel (Recommended)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/jasonlau111/apple-portfolio-lite)
+
+### Docker
+
+```bash
+docker-compose up -d
+```
+
+## License
+
+MIT
