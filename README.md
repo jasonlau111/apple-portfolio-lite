@@ -8,6 +8,12 @@
 
 ![Preview](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js) ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react) ![Tailwind](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=flat-square&logo=tailwind-css)
 
+## 预览
+
+| 深色模式 | 浅色模式 |
+|:--------:|:--------:|
+| ![Dark Mode](docs/preview-dark.png) | ![Light Mode](docs/preview-light.png) |
+
 ## 特性
 
 - 🎨 **Apple 设计风格** - 暗色主题、毛玻璃效果、圆角卡片
